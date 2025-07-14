@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { getSession } from "@/server/auth-actions";
 import Link from "next/link";
 import UserProfileDropDownButton from "./user-profile-button";
+import Navigation from "./header/navigation";
+import { NavSheet } from "./header/mobile-navigation";
 export type SessionType = {
   session: {
     id: string;
@@ -35,7 +37,7 @@ export default async function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        {/* <nav className="hidden md:flex items-center gap-6">
           <Link href="/" className="text-sm font-medium hover:text-primary">
             Home
           </Link>
@@ -57,11 +59,12 @@ export default async function Header() {
           >
             About
           </Link>
-        </nav>
+        </nav> */}
+        <Navigation/>
 
         {/* Auth CTA - Desktop */}
         {!session ? (
-          <div className="flex items-center gap-4">
+          <div className="md:flex items-center gap-4 hidden" >
             <Button variant="outline" asChild>
               <Link href="/sign-in">Sign In</Link>
             </Button>
@@ -72,6 +75,7 @@ export default async function Header() {
         ) : (
           <UserProfileDropDownButton />
         )}
+        <NavSheet/>
       </div>
     </header>
   );

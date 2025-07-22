@@ -139,7 +139,7 @@ export default async function Header() {
           />
         </div>
       </div>
-      <nav className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 px-4 py-2">
+      <nav className="hidden bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 px-4 py-2 md:block">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           <div className="flex items-center space-x-6">
             {navItems.map((item) => (

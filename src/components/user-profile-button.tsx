@@ -39,7 +39,7 @@ const UserProfileDropDownButton = async () => {
     <div>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <UserAvatar className="size-10" />
+          <UserAvatar className="size-8" />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="">
           <DropdownMenuLabel>

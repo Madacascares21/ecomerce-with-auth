@@ -7,9 +7,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ChevronDownIcon } from "lucide-react";
-import { RenderDropdownItems } from "./navigation";
+import { navigationMenuTriggerStyle, RenderDropdownItems } from "./navigation";
 import { useState } from "react";
 import { NavItem } from "./constants";
+import { cn } from "@/lib/utils";
 
 export const NavigationMenuItemComponent = (item: NavItem) => {
   // const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ export const NavigationMenuItemComponent = (item: NavItem) => {
         // open={open} onOpenChange={setOpen}
         >
           <DropdownMenuTrigger asChild>
-            <button className="flex items-center cursor-pointer gap-1 px-3 py-2 hover:bg-accent rounded-md transition-colors">
+            <button className={cn("flex items-center ",navigationMenuTriggerStyle())}>
               {item.label}
               <ChevronDownIcon
                 className={` size-3 transition-transform `}
@@ -35,7 +36,7 @@ export const NavigationMenuItemComponent = (item: NavItem) => {
               />
             </button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="overflow-hidden">
+          <DropdownMenuContent className="  p-4 flex flex-col items-center">
             <RenderDropdownItems items={item.children!} />
           </DropdownMenuContent>
         </DropdownMenu>

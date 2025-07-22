@@ -84,7 +84,7 @@ const Navigation = () => {
 
 export function NavSheet() {
   return (
-    <div className="md:hidden ml-auto">
+    <div className="md:hidden ">
       <Sheet>
         <SheetTrigger asChild>
           <Button variant="ghost" size="icon">

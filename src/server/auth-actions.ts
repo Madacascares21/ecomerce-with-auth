@@ -7,10 +7,14 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 
 export const getSession = async () => {
-  const session = await auth.api.getSession({
-    headers: await headers(),
-  });
-  return session;
+  try {
+    const session = await auth.api.getSession({
+      headers: await headers(),
+    });
+    return session;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const signOut = async () => {

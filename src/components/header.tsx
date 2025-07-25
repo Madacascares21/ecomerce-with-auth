@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Input } from "./ui/input";
 import AccountButton from "./AccountButton";
+import Container from "./Container";
 export type SessionType = {
   session: {
     id: string;
@@ -54,31 +55,23 @@ export default async function Header() {
   return (
     <header className="border-b bg-white sticky top-0 z-50">
       {/* Top Bar */}
-      <div className="bg-purple-300  border-b">
-        <div className="container mx-auto px-4">
+      <div className="bg-primary  border-b">
+        <Container className="py-0">
           <div className="flex items-center justify-between h-10 text-sm">
-            <div className="flex items-center space-x-4">
-              <span className="text-gray-600">
-                Free shipping on orders over $50
-              </span>
+            <div className="flex items-center space-x-4 text-white">
+              <span className="">Free shipping on orders over $50</span>
             </div>
-            <div className="flex items-center space-x-4">
-              <a href="#" className="text-gray-600 hover:text-gray-900">
-                Help
-              </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
-                Track Order
-              </a>
-              <a href="#" className="text-gray-600 hover:text-gray-900">
-                Store Locator
-              </a>
+            <div className="flex items-center space-x-4 text-white">
+              <a href="#">Help</a>
+              <a href="#">Track Order</a>
+              <a href="#">Store Locator</a>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto px-4">
+      <Container className="py-2 border-b">
         <div className="flex items-center justify-between h-16">
           <NavSheet />
           {/* Logo */}
@@ -126,7 +119,7 @@ export default async function Header() {
             </Button>
           </div>
         </div>
-      </div>
+      </Container>
 
       {/* Mobile Search Bar */}
       <div className="md:hidden border-t px-4 py-3">
@@ -139,19 +132,11 @@ export default async function Header() {
           />
         </div>
       </div>
-      <nav className="hidden bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 px-4 py-2 md:block">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
+      <nav className="hidden  px-4 py-2 md:block">
+        <Container className="py-0 flex items-center justify-between ">
           <div className="flex items-center space-x-6">
             {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`text-white text-sm font-medium hover:text-gray-200 transition-colors ${
-                  item.active
-                    ? "bg-white/20 px-3 py-1 rounded-md"
-                    : "hover:bg-white/10 px-3 py-1 rounded-md"
-                }`}
-              >
+              <Link key={item.name} href={item.href} className="font-thin">
                 {item.name}
               </Link>
             ))}
@@ -159,12 +144,11 @@ export default async function Header() {
 
           <Link
             href="#"
-            className="flex items-center space-x-1 text-white text-sm font-medium hover:text-gray-200 transition-colors hover:bg-white/10 px-3 py-1 rounded-md"
+            className="flex items-center space-x-1  text-sm font-medium hover:text-gray-200 transition-colors hover:bg-white/10 px-3 py-1 rounded-md"
           >
-            <HelpCircle className="w-4 h-4" />
-            <span>eMAG Help</span>
+            <span className="font-thin">eMAG Help</span>
           </Link>
-        </div>
+        </Container>
       </nav>
     </header>
   );

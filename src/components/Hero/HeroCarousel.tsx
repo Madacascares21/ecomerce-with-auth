@@ -10,12 +10,14 @@ import {
 import { ShoppingBag, Star } from "lucide-react";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import Container from "../Container";
 
 const slides = [
   {
     content: (
       <div className={`relative w-full h-full py-4 px-10 bg-purple-600`}>
-        <div className="grid lg:grid-cols-2 gap-8 items-center h-full">
+        <Image src={"/images/banner.jpg"} alt="ss" fill className="object-cover"/>
+        <Container className="grid lg:grid-cols-2 gap-8 items-center h-full sr-only">
           {/* Content */}
           <div className="text-white space-y-6 z-10 relative">
             <div className="space-y-2">
@@ -53,13 +55,13 @@ const slides = [
           {/* Image */}
           <div className="relative h-full min-h-[300px] lg:min-h-[400px]">
             <Image
-              src={"/placeholder.svg"}
+              src={"/images/shoe.png"}
               alt={"asasfa"}
               fill
-              className="object-cover rounded-lg shadow-xl"
+              className="object-contain rounded-lg "
             />
           </div>
-        </div>
+        </Container> 
       </div>
     ),
   },

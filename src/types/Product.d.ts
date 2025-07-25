@@ -3,6 +3,7 @@ type ProductType = {
   description?: any;
   categories: CategoryType[];
   variants:VariantType[];
+  
 };
 
 type CategoryType = {

@@ -21,9 +21,5 @@ export default async function NewProductSection() {
       </div>
     );
   }
-  return (
-    <div className="container mx-auto px-4 py-8 bg-gray-200">
-      <ProductCarousel products={data.products} title="Produse Noi" />
-    </div>
-  );
+  return <ProductCarousel products={data.products} />;
 }

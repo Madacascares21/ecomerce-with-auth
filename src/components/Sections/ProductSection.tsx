@@ -9,8 +9,8 @@ import { queryProducts } from "@/lib/query-products";
 
 // Sample product data
 
-export default async function NewProductSection() {
-  const { data, error } = await queryProducts(GET_NEW_PRODUCTS);
+export default async function NewProductSection({ href }: { href: string }) {
+  const { data, error } = await queryProducts(GET_NEW_PRODUCTS, {});
   // if (error) {
   //   console.log(error);
   // }
@@ -21,5 +21,5 @@ export default async function NewProductSection() {
       </div>
     );
   }
-  return <ProductCarousel products={data.products} />;
+  return <ProductCarousel href={href} products={data.products} />;
 }

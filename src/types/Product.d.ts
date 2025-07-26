@@ -1,9 +1,9 @@
 type ProductType = {
   productName: string;
+  slug: string;
   description?: any;
   categories: CategoryType[];
-  variants:VariantType[];
-  
+  variants: VariantType[];
 };
 
 type CategoryType = {
@@ -25,8 +25,9 @@ type AttributesType = {
 type PriceType = {
   amount: number;
   currency: string;
-  discount: {
-    amount: number;
-    valid_until: string;
-  };
+  discount: DiscounType;
+};
+type DiscounType = {
+  amount: number;
+  valid_until: string;
 };

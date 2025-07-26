@@ -1,15 +1,16 @@
 import { getApolloClient } from "@/server/product/productREST";
-import {
-  GET_BEST_SELLER_PRODUCTS,
-  GetProductsResponse,
-} from "@/server/product/queries";
+import { GET_BEST_SELLER_PRODUCTS } from "@/server/product/queries";
 import { ProductCarousel } from "../Product/ProductCarousel";
 import { queryProducts } from "@/lib/query-products";
 
 // Sample product data
 
-export default async function BestSellerProductSection() {
-  const { data, error } = await queryProducts(GET_BEST_SELLER_PRODUCTS);
+export default async function BestSellerProductSection({
+  href,
+}: {
+  href: string;
+}) {
+  const { data, error } = await queryProducts(GET_BEST_SELLER_PRODUCTS, {});
   // if (error) {
   //   console.log(error);
   // }
@@ -20,5 +21,5 @@ export default async function BestSellerProductSection() {
       </div>
     );
   }
-  return <ProductCarousel products={data.products} />;
+  return <ProductCarousel href={href} products={data.products} />;
 }

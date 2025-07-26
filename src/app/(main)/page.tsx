@@ -10,18 +10,13 @@ const page = () => {
   return (
     <>
       <HeroCarousel />
-      {/* <CategorySection /> */}
+      
+      <QueryProductLayout title="Produse Noi">
+        <NewProductSection href="/produse-noi" />
+      </QueryProductLayout>
 
       <QueryProductLayout title="Cele mai vandute">
-        <BestSellerProductSection />
-      </QueryProductLayout>
-
-      <QueryProductLayout title="Produse Noi">
-        <NewProductSection />
-      </QueryProductLayout>
-
-      <QueryProductLayout title="Discount">
-        <BestDiscountsProductSection />
+        <BestSellerProductSection href="/cele-mai-vandute" />
       </QueryProductLayout>
     </>
   );
